@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
+import { environment } from '../environments/environment';
+
 import { catchError, map, switchMap,  } from 'rxjs/operators';
 import { of } from "rxjs";
 
@@ -15,9 +17,7 @@ export class AppEffects {
   getSkills$ = createEffect(() => this.actions$.pipe(
   ofType(getSkillsApi),
   switchMap(() =>
-      // For production it has to be sc/structskills, for local machine environment, just structskills
-      this.http.get('structskills').pipe(
-        //this.http.get('sc/structskills').pipe(
+      this.http.get(environment.apiUrl + 'structskills').pipe(
           // If successful, dispatch success action with result
           map((res: any[]) => 
             getSkillsSuccess({res})

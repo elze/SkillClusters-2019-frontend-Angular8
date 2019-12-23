@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  apiUrl: 'https://sc2019.skillclusters.com/sc/',
   production: false
 };
 
