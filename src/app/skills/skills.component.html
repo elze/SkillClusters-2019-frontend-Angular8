@@ -1,12 +1,13 @@
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-    <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding 
+     [class.node-inline]="!node.expandable">
       <li class="mat-tree-node">
         <button mat-icon-button disabled></button>
-        {{node.name}}
+        {{node.name}} 
       </li>
     </mat-tree-node>
   
-    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding [class.node-normal]="node.expandable">
           <button mat-icon-button matTreeNodeToggle
                 [attr.aria-label]="'toggle ' + node.name">
             <mat-icon class="mat-icon-rtl-mirror" color="accent">

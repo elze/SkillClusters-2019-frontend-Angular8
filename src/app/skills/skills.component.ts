@@ -51,10 +51,8 @@ export class SkillsComponent implements OnInit {
     return node.children;
   };
 
-  hasChild = (index: number, node: SkillFlatNode) => {
+  hasChild = (index: number, node: SkillFlatNode): boolean => {
     console.log(`hasChild: node.name = ${node.name} node.expandable = ${node.expandable}`)
     return node.expandable;
   }   
-
-
 }
