@@ -19,7 +19,7 @@ export class SkillsComponent implements OnInit {
   treeFlattener: MatTreeFlattener<SkillNode, SkillFlatNode>;
 
   private transformer = (node: SkillNode, level: number) => {
-    return new SkillFlatNode(!!node.children && node.children.length > 0, node.item, level);
+    return new SkillFlatNode(!!node.children && node.children.length > 0, node.item, node.fontSize, node.percentOfTime, level);
   }
 
   dataSource: MatTreeFlatDataSource<SkillNode, SkillFlatNode>;

@@ -36,7 +36,7 @@ function dataSourceFromAction(skills: Array<any>): Array<SkillNode> {
 function getSkillObjects(rawSkills: Array<any>): SkillNode[] {              
     let skills = new Array<SkillNode>();
     rawSkills.map(s => {          
-        let sk = new SkillNode(s["item"], s["successors"]);
+        let sk = new SkillNode(s["item"], s["fontSize"], s["percentOfTime"], s["successors"]);
         skills.push(sk);
     });
     console.log("getSkillObjects: skills = ");

@@ -3,7 +3,8 @@
      [class.node-inline]="!node.expandable">
       <li class="mat-tree-node">
         <button mat-icon-button disabled></button>
-        {{node.name}} 
+        <button mat-stroked-button class="button-with-margin" color="primary"
+        [ngStyle]="{ 'font-size.px': node.fontSize}">{{node.name}}<br/>{{node.percentOfTime}}</button>
       </li>
     </mat-tree-node>
   
